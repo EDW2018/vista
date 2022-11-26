@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_99d4ae83b99a4d969796f7221d477957 }}/edwin17/angular:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_99d4ae83b99a4d969796f7221d477957 }}/angular:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -48,4 +48,4 @@ jobs:
         app-name: 'pruebafinal1cg'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_ba4320924e644b18b067fa38ab3d631b }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_99d4ae83b99a4d969796f7221d477957 }}/edwin17/angular:${{ github.sha }}'
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_99d4ae83b99a4d969796f7221d477957 }}/angular:${{ github.sha }}'
